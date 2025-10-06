@@ -3,11 +3,11 @@
     border: 1px solid black;
     flex: 0 0 40px;
     box-sizing: border-box;
+    background-color: grey;
 }
 
 .grid-container {
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
     align-items: flex-start;
     border: 5px solid black;
@@ -17,7 +17,34 @@
 .container {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
     align-items: center;
+    gap: 5px;
     height: 100vh;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body {
+    background-color: maroon;
+}
+
+.gold-text {
+    background: linear-gradient(to bottom, #FFD700, #DAA520, #B8860B);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    font-weight: bold;
+    font-family: "Brush Script MT", cursive;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-evenly;
+    width: 640px;
 }

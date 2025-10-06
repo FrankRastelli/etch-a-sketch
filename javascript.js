@@ -1,5 +1,8 @@
 const gridContainer = document.querySelector(".grid-container");
-const btn = document.querySelector(".input");
+const gridBtn = document.querySelector(".input");
+const colorBtn = document.querySelector(".color");
+const darkeningBtn = document.querySelector(".darkening");
+const clearBtn = document.querySelector(".clear");
 
 // create base 16x16 grid
 for (let i = 0; i < 256; i++) {
@@ -21,7 +24,7 @@ function getRandomRgbColor() {
     return `rgb(${red}, ${green}, ${blue})`;
 }
 
-btn.addEventListener("click", () => {
+gridBtn.addEventListener("click", () => {
     let numberOfSquares = prompt("Enter a new grid size", "1-100");
     if (numberOfSquares > 100 || numberOfSquares < 1) {
         alert("Grid size should be between 1-100");
@@ -54,4 +57,9 @@ btn.addEventListener("click", () => {
 
         gridContainer.appendChild(grid);
     }
+});
+
+colorBtn.addEventListener("click", () => {
+    let newColor = prompt("Enter a color you want to use");
+    
 });
