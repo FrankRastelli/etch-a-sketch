@@ -2,13 +2,13 @@ const gridContainer = document.querySelector(".grid-container");
 const gridBtn = document.querySelector(".input");
 const randomBtn = document.querySelector(".random");
 const colorBtn = document.querySelector(".color");
-const darkeningBtn = document.querySelector(".darkening");
+const eraserbtn = document.querySelector(".eraser");
 const clearBtn = document.querySelector(".clear");
 
 let gridSize = 16;
 let mode = "random";
 let fixedColor = "white";
-//something for darkening
+let erase = "grey";
 
 // create base 16x16 grid
 for (let i = 0; i < (gridSize * gridSize); i++) {
@@ -28,6 +28,9 @@ function colorMode(squares) {
     }
     else if (mode === "fixed") {
         squares.style.backgroundColor = fixedColor;
+    }
+    else if (mode === "eraser") {
+        squares.style.backgroundColor = erase;
     }
 }
 
@@ -88,7 +91,9 @@ colorBtn.addEventListener("click", () => {
     }
 });
 
-// darkening btn ******
+eraserbtn.addEventListener("click", () => {
+    mode = "eraser";
+});
 
 clearBtn.addEventListener("click", () => {
     // remove old grid
