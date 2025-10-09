@@ -48,12 +48,9 @@ gridBtn.addEventListener("click", () => {
         grid.style.backgroundColor = color;
         });
 
-        let gridContainerSize = 640;
-        let gridSquareSize = 640/newGridSize;
-        let unit = "px";
-        let sizeInPixels = gridSquareSize + unit;
-        grid.style.height = sizeInPixels;
-        grid.style.flex = `0 0 ${sizeInPixels}`;
+        let size = 640 / newGridSize + "px";
+        grid.style.height = size;
+        grid.style.flex = `0 0 ${size}`;
 
         gridContainer.appendChild(grid);
     }
@@ -61,5 +58,16 @@ gridBtn.addEventListener("click", () => {
 
 colorBtn.addEventListener("click", () => {
     let newColor = prompt("Enter a color you want to use");
-    
+
+    if (CSS.supports("color", newColor)) {
+        grid.addEventListener("mouseenter", () => {
+            grid.forEach(square => {
+                square.style.backgroundcolor = newColor;
+            });
+        });
+    }
+    else {
+        alert("Invalid color");
+        return;
+    }
 });
